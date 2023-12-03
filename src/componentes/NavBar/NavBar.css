@@ -1,0 +1,44 @@
+#banner{
+    width: 100%;
+    height: auto
+}
+#navbar{
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    background-color: white;
+    }   
+#navbar ul{
+    text-align: center;
+    list-style: none;
+    padding: 0.5rem 0.5rem;
+    text-decoration: none;
+    }
+#navbar li{
+    text-decoration: none;
+    display: inline;
+    margin: 1rem; 
+    }
+#navbar a{
+    color: black;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    }
+
+#cartwidget{
+    display: flex;
+    }
+#cartwidget p{
+    text-align: center;
+    padding: 0.5rem 1rem;
+    color: red;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', cursive;
+    }
+#cartwidget img{
+    
+
+    width: 2rem;
+    height: 2rem;
+}
