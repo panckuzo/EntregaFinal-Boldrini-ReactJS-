@@ -1,36 +1,40 @@
 import CartWidget from "./CardWidget";
 import "./NavBar.css"
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
-    <>
-    <img id= "banner" src="/img/8TonicasLogo.jpg" alt="" />
-    <nav id="navbar">
+    <div id="navbar">
+        <Link to="/"   className="brand">
+            <img src="/img/musica.png" alt="Logo8Tonicas" />
+            <h1>8Tonicas</h1>
+        </Link>
         <ul>
             <li>
-                <a href="">Instrumentos de Cuerda</a>
+                <Link to="/todos">Todos los Productos</Link>
             </li>
             <li>
-                <a href="">Instrumentos de Viento</a>
+                <Link to="/categoria/cuerdas">Cuerdas</Link>
             </li>
             <li>
-                <a href="">Instrumentos de Percusión</a>
+                <Link to="/categoria/vientos">Vientos</Link>
             </li>
             <li>
-                <a href="">Teclados y Pianos</a>
+                <Link to="/categoria/percusion">Percusión</Link>
             </li>
             <li>
-                <a href="">Accesorios </a>
+                <Link to="/categoria/teclas">Teclados y Pianos</Link>
             </li>
+            {/* <li>
+                <Link to="/categoria/accesorios">Accesorios</Link>
+            </li> */}
             <li>
-                <a href="">Equipos de Sonido</a>
+                <Link to="/categoria/equipos">Equipos de Sonido</Link>
             </li>
-
         </ul>
-        <CartWidget/>
-        
-    </nav>
-    </>
+        <CartWidget/> 
+    </div>
+    
     )
 }
 
