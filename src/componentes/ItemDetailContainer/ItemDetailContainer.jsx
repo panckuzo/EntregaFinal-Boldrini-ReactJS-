@@ -1,79 +1,53 @@
-// import { useEffect, useState } from "react"
-// import obtenerProductos from "../Utilidades/Data"
-// import ItemDetail from "../ItemDetail/ItemDetail"
-// import { useParams } from "react-router-dom"
-// import "./ItemDetailContainer.css"
-
-// const ItemDetailContainer = () => {
-//     const [producto, setProducto] = useState({})
-//     const { id } = useParams()
-
-//     useEffect(()=>{
-//     obtenerProductos
-//         .then((respuesta)=> {
-//         const productoEncontrado = respuesta.find( (prod)=> prod.id === id)
-//         setProducto(productoEncontrado)
-//         })
-//         .catch((err)=>{
-//         console.log(err)
-//         })
-
-//     }, [])
-
-//     return (
-//     <div className="ItemDetailContainer">
-//         <ItemDetail producto={producto} />
-//     </div>
-//     )
-// }
-// export default ItemDetailContainer
-
 import { useEffect, useState } from "react";
-import { ScaleLoader } from "react-spinners";
-import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
+
+import { ScaleLoader } from "react-spinners";
+
+import ItemDetail from "../ItemDetail/ItemDetail";
 import db from "../../db/db";
+
+import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({});
     const { id } = useParams();
+    const [productoExiste, setProductoExiste] = useState(false);
     const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
-    const productoRef = doc(db, "productos", id);
-    getDoc(productoRef)
-    .then((respuesta) => {
-        const productoDb = { id: respuesta.id, ...respuesta.data() };
-        setProducto(productoDb);
-    })
-    .catch((error)=> console.log(error))
-    .finally(()=> setCargando(false))
+        const productoRef = doc(db, "productos", id);
+        getDoc(productoRef)
+            .then((respuesta) => {
+                const productoDb = { id: respuesta.id, ...respuesta.data() };
+
+                if (!respuesta.exists()) {
+                    setProductoExiste(true);
+                }
+                setProducto(productoDb);
+                setCargando(false);
+            })
+            .catch((error) => console.log(error));
     }, [id]);
 
-    return  (
+    return (
         <>
             {cargando ? (
-            <div className="cargando">
-                <ScaleLoader color="#000000" />
-            </div>
+                <div className="cargando">
+                    <ScaleLoader color="#000000" />
+                </div>
             ) : (
-            <div>
-                <ItemDetail producto={producto} />
-            </div>
+                <div className="ItemDetailContainer">
+                    {productoExiste ? (
+                        <div className="NoExiste">El producto buscado no existe 😢</div>
+                    ) : (
+                        <ItemDetail producto={producto} />
+                    )}
+                </div>
             )}
         </>
-        );
-    };
-    
-    
-    
-    
-    
-//     (
-//     <div>
-//         <ItemDetail producto={producto} />
-//     </div>
-//     );
-// };
+    );
+};
+
 export default ItemDetailContainer;
+

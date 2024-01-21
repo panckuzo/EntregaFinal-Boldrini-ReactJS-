@@ -1,42 +1,12 @@
-// import { useEffect, useState } from "react";
-// import obtenerProductos from "../Utilidades/Data";
-// import ItemList from "../ItemList/ItemList";
-// import { useParams } from "react-router-dom";
-
-// import "./ItemListContainer.css"
-
-// const ItemListContainer = () => {
-//     const [productos, setProductos] = useState([]);
-
-//     const { categoria } = useParams();
-    
-//     useEffect(() => {
-//         obtenerProductos
-//         .then((respuesta) => {
-//             if (categoria) {
-//                 const productosFiltrados = respuesta.filter(
-//                     (producto) => producto.categoria === categoria
-//                 );
-//                 setProductos(productosFiltrados);
-//             } else {
-//                 setProductos(respuesta);;
-//             }
-//             })
-//         .catch((error) => {
-//             console.log(error);
-//         })
-//         .finally(() => {
-//             console.log("finalizo la promesa");
-//         });
-//     }, [categoria]);
-
 import { useEffect, useState } from "react";
-
-import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { ScaleLoader } from "react-spinners";
+
 import { collection, getDocs, query, where } from "firebase/firestore";
+
 import db from "../../db/db";
+import ItemList from "../ItemList/ItemList";
+
+import { ScaleLoader } from "react-spinners";
 
 import "./ItemListContainer.css";
 
@@ -53,10 +23,8 @@ const ItemListContainer = ({ saludo }) => {
     const productosRef = collection(db, "productos");
 
     if(categoria){
-      //filtrar data
         consulta = query(productosRef, where("categoria", "==", categoria))
     }else{
-      //traer toda la data
         consulta = productosRef
     }
 

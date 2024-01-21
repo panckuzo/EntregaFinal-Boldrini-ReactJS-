@@ -1,7 +1,17 @@
-.ItemDetailContainer {
+.ItemDetailContainer{
+    display: flex;
+    justify-content: center; 
+}
+
+.NoExiste {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Agregado para centrar verticalmente */
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    height: 40vh;
 }
+
 
     

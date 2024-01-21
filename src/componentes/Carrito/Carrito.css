@@ -5,6 +5,7 @@
 
 .carrito .lista{
     display: flex;
+    justify-content: center;
     }
 
 .carrito .producto{
@@ -62,27 +63,6 @@
     cursor: pointer;
     }
 
-.borrar-todo{
-    width: 50%;
-    text-decoration: none;
-    margin: 5px 0;
-    color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    background-color: black;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 20px;
-    }
-
-.borrar-todo:hover{
-    cursor: pointer;
-    background-color: rgb(210, 0, 0);
-    color: white;
-    }
-
 
 .texto{
     margin: 5px 0;
@@ -104,41 +84,65 @@
     }
 
 .carrito-vacio .button {
-        width: 30%;
-        text-decoration: none;
-        margin: 5px 0;
-        color: white;
-        padding: 10px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 3px;
-        background-color: black;
-        font-family: 'Bebas Neue', cursive;
-        font-size: 20px;
+    width: 30%;
+    text-decoration: none;
+    margin: 5px 0;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: black;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
     }
 
 .carrito-vacio .button:hover {
     cursor: pointer;
     background-color: rgb(46, 46, 46);
     }
+.botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
 
-    .link {
-        width: 50%;
-        text-decoration: none;
-        margin: 5px 0;
-        color: white;
-        padding: 10px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 3px;
-        background-color: black;
-        font-family: 'Bebas Neue', cursive;
-        font-size: 20px;
-        }
+.borrar-todo{
+
+    margin: 5px 0;
+    color: white;
+    padding: 10px 275px;
+    border-radius: 3px;
+    background-color: black;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
     
-        .link:hover {
-        cursor: pointer;
-        background-color: rgb(46, 46, 46);
-        }
+.borrar-todo:hover{
+    cursor: pointer;
+    background-color: rgb(210, 0, 0);
+    color: white;
+}
+    
+
+.link {
+    width: 50%;
+    text-decoration: none;
+    margin: 5px 0;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: black;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    }
+    
+.link:hover {
+    cursor: pointer;
+    background-color: rgb(46, 46, 46);
+    }

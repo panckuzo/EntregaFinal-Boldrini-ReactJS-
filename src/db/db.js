@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 import { disableNetwork, disablePersistentCacheIndexAutoCreation, getFirestore } from "firebase/firestore"
 
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCXizcFBmxSbr9evcvtJ0JUH0sDMd51jss",
     authDomain: "e-commerce-reactjs-f52a9.firebaseapp.com",
@@ -12,7 +11,6 @@ const firebaseConfig = {
     appId: "1:718445265929:web:b5527b06c2489d1979e4d8"
 };
 
-// Initialize Firebase
 initializeApp(firebaseConfig);
 
 const db = getFirestore()
