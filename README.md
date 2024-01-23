@@ -23,3 +23,11 @@ Instalar el proyecto con npm
   react-spinners
   react-toastify
 ```
+
+## Autor
+
+- [@panckuzo](https://github.com/panckuzo)
+## 
+
+🔗 Links
+[[Web-Vercel]()]  (https://ecommerce-iota-eight-59.vercel.app/)
