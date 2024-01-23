@@ -22,6 +22,7 @@ const Carrito = () => {
 
     return (
     <div className="carrito">
+        <h2 className="texto nombre"> Productos en el carrito</h2>
         <ul className="lista">
         {carrito.map((producto) => (
             <li className="producto" key={producto.id}>
