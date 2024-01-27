@@ -84,3 +84,30 @@
     background-color: rgb(46, 46, 46);
     }
 
+
+@media (max-width: 768px) {
+.ItemDetail {
+    width: 100%;
+    flex-direction: column;
+    }
+.ItemDetail .detalle {
+    width: 100%;
+    }
+.ItemDetail .imagen {
+    width: 100%;
+    }
+}
+    
+@media (max-width: 425px) {
+.ItemDetail {
+    width: 100%;
+    flex-direction: column;
+    }
+.ItemDetail .detalle {
+    width: 100%;
+    }
+.ItemDetail .imagen {
+    width: 100%;
+    }
+}
+    

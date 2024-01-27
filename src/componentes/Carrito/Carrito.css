@@ -146,3 +146,27 @@
     cursor: pointer;
     background-color: rgb(46, 46, 46);
     }
+
+@media (max-width: 768px) {
+.carrito .lista{
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+.carrito .producto{
+    width: 100%;
+    }
+}
+    
+@media (max-width: 425px) {
+.carrito .lista{
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+.carrito .producto{
+    width: 80%;
+    }
+.borrar-todo{
+    padding: 10px 20px;
+    }
+}
+    
